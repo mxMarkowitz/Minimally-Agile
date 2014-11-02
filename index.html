@@ -1,0 +1,308 @@
+<html>
+<head>
+	<style>
+		html{
+			display: block;
+			font-family: Helvetica, arial, sans-serif;
+		}
+		.controls-Container{
+			width: 100%;
+			height: 50px;
+			margin-bottom: 10px;
+		}
+		.controls-Btn{
+			-webkit-appearance: none;
+			//outline: 1px solid #ccc;
+			border: none;
+			background: white;
+			float: left;
+			height: 50px;
+			width: 50px;
+			padding: 10px;
+			font-family: Helvetica, arial, sans-serif;
+			color: #3498db;
+			font-size: 24px;
+			cursor: pointer;
+		}
+		.controls-Btn:active{
+			color: #2980b9;
+			outline: none;
+		}
+		.controls-Btn:focus{
+			outline: none;
+		}
+		.main-Area{
+			width: 100%;
+			float: left;
+			height: 100%;
+		}
+		.story-Col{
+			float:left;
+			width: 25%;
+			height: 100%;
+			//outline: 1px solid #ccc;
+		}
+		.story-Col-Header{
+			width: 100%;
+			height: 50px;
+			//border-bottom: 1px solid #ccc;
+		}
+		.story-Col-Header h2{
+			height: 100%;
+			margin: 0;
+			line-height: 50px;
+			text-align: center;
+			color: #6e6d72;
+			font-weight: 100;
+			cursor: default;
+		}
+		.story-Col-Body{
+			border-right: 1px solid #ccc;
+			width: -moz-calc(100% - 1px);
+    		width: -webkit-calc(100% - 1px);
+    		width: calc(100% - 1px);
+			height: 100%;
+		}
+		#doneCol .story-Col-Body{
+			border-right: 0;
+			text-decoration: line-through;
+		}
+
+		.story{
+			width: 80%;
+			height: 50px;
+			//border: 1px solid #ccc;
+			margin: auto;
+			margin-bottom: 10px;
+			padding: 10px;
+			font-size: 12px;
+			position: relative;
+		}
+		.story:hover{
+			outline: 1px solid #ccc;
+		}
+		.story .summary{
+			width: 100%;
+			overflow : hidden;
+  			text-overflow: ellipsis;
+  			display: -webkit-box;
+  			-webkit-line-clamp: 2;
+  			-webkit-box-orient: vertical;
+  			color: #6e6d72;
+		}
+		.story b{
+			color: black;
+		}
+		.story .points{
+			float: left;
+			margin-top: 10px;
+			color: gray;
+			padding: 2px 5px 2px 5px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			margin-left: 5px;
+			margin-bottom: 5px;
+		}
+		.story .tag{
+			float: right;
+			margin-top: 10px;
+			color: white;
+			background: #c0392b;
+			padding: 2px 5px 2px 5px;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			margin-right: 5px;
+			margin-bottom: 5px;
+		}
+
+
+	</style>
+
+</head>
+<body>
+
+	<div class="controls-Container">
+		<input class="controls-Btn" type='button' value="+"></input>
+	</div>
+	<div class="main-Area">
+		<div class="story-Col" id="todoCol">
+			<div class="story-Col-Header">
+				<h2>To Do</h2>
+			</div>
+			<div class="story-Col-Body">
+				<div class="story">
+					<div class="summary">
+						<b>#242</b>
+						 This is a sample bug summary
+					</div>
+					<div class="points">
+						8 Points
+					</div> 
+					<div class="tag">
+						Bug
+					</div> 
+				</div>
+				<div class="story">
+					<div class="summary">
+						<b>#243</b>
+						 This is a sample feature summary
+					</div>
+					<div class="points">
+						8 Points
+					</div> 
+					<div class="tag" style="background: #27ae60">
+						Feature
+					</div> 
+				</div>
+				<div class="story">
+					<div class="summary">
+						<b>#244</b>
+						 This is a sample design summary
+					</div>
+					<div class="points">
+						8 Points
+					</div> 
+					<div class="tag" style="background: #9b59b6">
+						Design
+					</div> 
+				</div>
+			</div>
+		</div>
+		<div class="story-Col" id="inProgressCol">
+			<div class="story-Col-Header">
+				<h2>In Progress</h2>
+			</div>
+			<div class="story-Col-Body">
+				<div class="story">
+					<div class="summary">
+						<b>#241</b>
+						 This is a sample feature summary
+					</div>
+					<div class="points">
+						8 Points
+					</div> 
+					<div class="tag" style="background: #27ae60">
+						Feature
+					</div> 
+				</div>
+			</div>
+		</div>
+		<div class="story-Col" id="testingCol">
+			<div class="story-Col-Header">
+				<h2>Testing</h2>
+			</div>
+			<div class="story-Col-Body">
+				<div class="story">
+					<div class="summary">
+						<b>#237</b>
+						 This is a sample bug summary
+					</div>
+					<div class="points">
+						8 Points
+					</div> 
+					<div class="tag">
+						Bug
+					</div> 
+				</div>
+				<div class="story">
+					<div class="summary">
+						<b>#238</b>
+						 This is a sample bug summary
+					</div>
+					<div class="points">
+						8 Points
+					</div> 
+					<div class="tag">
+						Bug
+					</div> 
+				</div>
+				<div class="story">
+					<div class="summary">
+						<b>#236</b>
+						 This is a sample bug summary
+					</div>
+					<div class="points">
+						8 Points
+					</div> 
+					<div class="tag">
+						Bug
+					</div> 
+				</div>
+			</div>
+		</div>
+		<div class="story-Col" id="doneCol">
+			<div class="story-Col-Header">
+				<h2>Done</h2>
+			</div>
+			<div class="story-Col-Body">
+				<div class="story">
+					<div class="summary">
+						<b>#240</b>
+						 This is a sample bug summary
+					</div>
+					<div class="points">
+						8 Points
+					</div> 
+					<div class="tag">
+						Bug
+					</div> 
+				</div>
+				<div class="story">
+					<div class="summary">
+						<b>#239</b>
+						 This is a sample bug summary
+					</div>
+					<div class="points">
+						8 Points
+					</div> 
+					<div class="tag">
+						Bug
+					</div> 
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+
+
+	<script src="//code.jquery.com/jquery-1.2.1.min.js"></script>
+	<script>
+		$( document ).ready( function(){
+			console.log('jQuery Loaded');
+			var data = {};
+			$.ajax({
+			  url: '/agile/WebCalls/getAllStories.php',
+			  success: function(data) {
+			  	console.log('Got All Stories');
+			  	console.log(data);
+			  }
+			});
+
+
+		});
+
+		function writeStoryToColumn(storyData, column){
+			var template = '<div class="story">' +
+								'<div class="summary">' +
+									'<b>{{ ID }}</b>' +
+						 			'{{ summary }}' +
+								'</div>' +
+								'<div class="points">' +
+									'{{ points }}' +
+									'</div>' +
+								'<div class="tag">' +
+									'{{ tag }}' +
+								'</div> ' +
+							'</div>';
+
+			column.append(template);
+		}
+
+	</script>
+	
+</body>
+
+</html>
