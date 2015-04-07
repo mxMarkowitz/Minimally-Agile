@@ -14,9 +14,14 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 	$estimate = isset($_POST['estimate']) ? mysql_real_escape_string($_POST['estimate']) : "";
 	$points = isset($_POST['points']) ? mysql_real_escape_string($_POST['points']) : "";
 	$status = isset($_POST['status']) ? mysql_real_escape_string($_POST['status']) : "";
+	$type = isset($_POST['type']) ? mysql_real_escape_string($_POST['type']) : "";
+	$typecolor = isset($_POST['typecolor']) ? mysql_real_escape_string($_POST['typecolor']) : "";
+	$owner = isset($_POST['owner']) ? mysql_real_escape_string($_POST['owner']) : "";
+	$project = isset($_POST['project']) ? mysql_real_escape_string($_POST['project']): NULL;
 
 	// Insert data into data base
-	$sql = "INSERT INTO `$serverName`.`stories` (`ID`, `summary`, `description`, `estimate`, `points`, `status`) VALUES (NULL, '$summary', '$description', '$estimate', '$points', '$status');";
+	$sql = "INSERT INTO `$serverName`.`stories` (`ID`, `summary`, `description`, `estimate`, `points`, `status`, `type`, `typecolor`, `owner`, `project`) VALUES (NULL, '$summary', '$description', '$estimate', '$points', '$status', '$type', '$typecolor', '$owner', '$project')";
+	//prepared statements
 	$qur = mysql_query($sql);
 	if($qur){
 		$json = array("status" => 1, "msg" => "Story Added!");

@@ -2,7 +2,7 @@
 	// Include confi.php
 	include_once('confi.php');
 
-	$qur = mysql_query("SELECT ID, summary, description, status, estimate, points  FROM `stories` WHERE 1");
+	$qur = mysql_query("SELECT ID, summary, description, status, estimate, points, type, typecolor FROM `stories` WHERE 1");
 	if($qur === FALSE) {
    		die(mysql_error()); // TODO: better error handling
 	}
@@ -14,9 +14,11 @@
 						  "description" => $description, 
 						  "status" => $status,
 						  "estimate" => $estimate,
-						  "points" => $points); 
+						  "points" => $points,
+						  "type" => $type,
+						  "typecolor" => $typecolor); 
 	}
-	$json = array("status" => 1, "info" => $result);
+	$json = array("status" => 1, "stories" => $result);
 
 	@mysql_close($conn);
 
